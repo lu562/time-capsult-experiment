@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+  test-hbmpc:
+    build:
+      context: .
+      dockerfile: .ci/Dockerfile
+    volumes:
+      - ./aws:/usr/src/HoneyBadgerMPC/aws
+      - ./conf:/usr/src/HoneyBadgerMPC/conf
+      - ./docs:/usr/src/HoneyBadgerMPC/docs
+      - ./progs:/usr/src/HoneyBadgerMPC/progs
+      - ./honeybadgermpc:/usr/src/HoneyBadgerMPC/honeybadgermpc
+      - ./scripts:/usr/src/HoneyBadgerMPC/scripts
+      - ./tests:/usr/src/HoneyBadgerMPC/tests
+      - ./.coveragerc:/usr/src/HoneyBadgerMPC/.coveragerc
+      - ./.flake8:/usr/src/HoneyBadgerMPC/.flake8
+      - ./Makefile:/usr/src/HoneyBadgerMPC/Makefile
+      - ./pytest.ini:/usr/src/HoneyBadgerMPC/pytest.ini
+      - ./setup.py:/usr/src/HoneyBadgerMPC/setup.py
+      - /usr/src/HoneyBadgerMPC/honeybadgermpc/ntl  # Directory _not_ mounted from host

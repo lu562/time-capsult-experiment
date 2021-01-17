@@ -1,0 +1,64 @@
+{
+    "mpc" : {
+        "command": "python -m apps.tutorial.bit_dec",
+        "t": 1,
+        "n": 5,
+        "k": 1,
+        "num_faulty_nodes": 0,
+        "num_triples": 1000,
+        "port": 7000
+    },
+
+    "aws":{
+        "setup_file_path": "./aws/setup.sh",
+
+        "region":{
+            "us-east-1": {
+                "vm_count": 1,
+                "security_group_ids": ["sg-0c5fe0dc90a56a2df"],
+                "image_id": "ami-0ac019f4fcb7cb7e6",
+                "key_file_path": "./aws/dkg-test.pem",
+                "key_name": "dkg-test"
+            },
+            "sa-east-1": {
+                "vm_count": 1,
+                "security_group_ids": ["sg-0795ca8c27d2cc4dd"],
+                "image_id": "ami-0f2c5d4cfd5301fac",
+                "key_file_path": "./aws/dkg-sa-east-1.pem",
+                "key_name": "dkg-sa-east-1"
+            },
+            "eu-central-1": {
+                "vm_count": 1,
+                "security_group_ids": ["sg-0a6222a1baf37f592"],
+                "image_id": "ami-0e1ce3e0deb8896d2",
+                "key_file_path": "./aws/dkg-eu-central-1.pem",
+                "key_name": "dkg-eu-central-1"
+            },
+            "ap-south-1": {
+                "vm_count": 1,
+                "security_group_ids": ["sg-02ae2e16fed6e0e43"],
+                "image_id": "ami-0db0b3ab7df22e366",
+                "key_file_path": "./aws/dkg-ap-south-1.pem",
+                "key_name": "dkg-ap-south-1"
+            },
+            "ca-central-1": {
+                "vm_count": 1,
+                "security_group_ids": ["sg-042c47e12f1e678b4"],
+                "image_id": "ami-0e625dfca3e5a33bd",
+                "key_file_path": "./aws/dkg-ca-central-1.pem",
+                "key_name": "dkg-ca-central-1"
+            }
+        },
+
+        "vm_name": "honeybadgermpc-vms",
+
+        "instance_type": "c5.2xlarge",
+        "instance_user_name": "ubuntu",
+
+        "bucket_name": "lu562"
+    },
+
+    "docker": {
+        "image_path": "donghang94/dkg"
+    }
+}

@@ -1,0 +1,12 @@
+.ci
+.git
+.pytest_cache
+.coverage
+.gitignore
+**/__pycache__
+*.yml
+Dockerfile
+**/*.pyc
+sharedata/**
+aws/
+conf/
